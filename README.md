@@ -1,2 +1,3 @@
-# RickAndMorty
-Pagina que muestra todos los personajes de Rick And Morty.
+# Rick And Morty Website
+
+Esta pagina muestra todos los personajes de la serie Rick and Morty.

@@ -1,0 +1,10 @@
+.nav-button {
+  background: $secundary-color;
+  min-width: 30px;
+  height: 40px;
+  border-radius: 0.75rem;
+  border: none;
+}
+#disable {
+  background: rgba($secundary-color, $alpha: 0.5);
+}

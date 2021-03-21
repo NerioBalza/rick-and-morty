@@ -1,0 +1,21 @@
+@keyframes icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: icon-rotate infinite 2s linear;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: inherit;
+
+  &-icon {
+    font-size: 4rem;
+  }
+}

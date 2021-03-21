@@ -1,0 +1,38 @@
+@mixin footer-container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  gap: 2rem;
+}
+
+footer {
+  width: 100%;
+  background-color: $primary-color;
+  padding: 5rem;
+  color: $light-color;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  font-size: 1.6rem;
+
+  .social-media {
+    @include footer-container;
+
+    .icon {
+      font-size: 2rem;
+      display: inline-block;
+      border: 1px solid $light-color;
+      border-radius: 50%;
+      padding: 1rem;
+    }
+  }
+
+  .links {
+    @include footer-container;
+  }
+
+  .copyright {
+    @include footer-container;
+  }
+}

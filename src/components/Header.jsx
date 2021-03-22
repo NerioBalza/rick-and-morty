@@ -17,7 +17,6 @@ const Header = () => {
           </figure>
         </Link>
       </div>
-
       <div className="search">
         <label htmlFor="searcher" className="search-label">
           <i className="icon-search icon"></i>

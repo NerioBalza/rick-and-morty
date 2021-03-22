@@ -1,5 +1,8 @@
 import React from "react";
 
+import Loading from "../components/Loading";
+import CharacterCard from "../components/CharacterCard";
+
 const apiUrl = "https://rickandmortyapi.com/api/character/";
 
 class CharacterDetails extends React.Component {
@@ -11,7 +14,7 @@ class CharacterDetails extends React.Component {
 
   componentDidMount() {
     this.fetchData(apiUrl + this.props.match.params.ID);
-    console.log(this.state.data);
+    window.scrollTo(0, 0);
   }
 
   fetchData = async (APIURL) => {
@@ -39,7 +42,17 @@ class CharacterDetails extends React.Component {
   }
 
   render() {
-    return <div className="character-details"></div>;
+    return (
+      <div className="character-details">
+        {this.state.loading ? (
+          <Loading />
+        ) : (
+          <section className="card-container">
+            <CharacterCard data={this.state.data} />
+          </section>
+        )}
+      </div>
+    );
   }
 }
 

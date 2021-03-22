@@ -25,6 +25,17 @@ footer {
       border: 1px solid $light-color;
       border-radius: 50%;
       padding: 1rem;
+      &:active {
+        background: $light-color;
+        color: $primary-color;
+      }
+
+      @media screen and (min-width: 768px) {
+        &:hover {
+          background: $light-color;
+          color: $primary-color;
+        }
+      }
     }
   }
 

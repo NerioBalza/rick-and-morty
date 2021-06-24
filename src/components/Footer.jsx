@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="social-media">
-        <a href="https://twitter.com/NerioDev" target="blank" className="">
+        <a href="https://twitter.com/neriobalza_" target="blank" className="">
           <i className="icon-twitter icon"></i>
         </a>
-        <a href="https://github.com/NerioBalza" target="blank" className="">
+        <a href="https://github.com/neriobalza" target="blank" className="">
           <i className="icon-github icon"></i>
         </a>
         <a
@@ -19,7 +19,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="links">
-        <a href="https://github.com/NerioBalza/RickAndMorty" target="blank">
+        <a href="https://github.com/neriobalza/RickAndMorty" target="blank">
           GitHub Respository
         </a>
       </div>

@@ -1,15 +1,20 @@
-@import "./components/Globals.scss";
-@import "./components/Icons.scss";
+// Global
+@import "./lib/Globals.scss";
+@import "./lib/Icons.scss";
+
+// Components
+@import "./components/Layout.scss";
 @import "./components/Header.scss";
 @import "./components/Footer.scss";
 
-@import "./components/Layout.scss";
-@import "./components/Home.scss";
 @import "./components/Searcher.scss";
 @import "./components/Characters.scss";
 @import "./components/CharacterItem.scss";
 @import "./components/PagesButtons.scss";
 @import "./components/NavButton.scss";
 @import "./components/Loading.scss";
-@import "./components/CharacterDetails.scss";
 @import "./components/CharacterCard.scss";
+
+// Pages
+@import "./components/Home.scss";
+@import "./components/CharacterDetails.scss";

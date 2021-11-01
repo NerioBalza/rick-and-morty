@@ -12,7 +12,7 @@
 
   &__input {
     outline: none;
-    background-color: $light-color;
+    background-color: $text-color;
     padding: 0 1.75rem;
     display: block;
     width: 100%;
@@ -24,7 +24,7 @@
   &__button {
     outline: none;
     position: absolute;
-    color: $tertiary-color;
+    color: $section-color;
     right: 0;
     width: 3.5rem;
     height: 3.5rem;

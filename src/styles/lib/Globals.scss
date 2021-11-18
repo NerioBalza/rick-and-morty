@@ -16,6 +16,7 @@ $text-color: #ffffff;
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  min-width: 320px;
   // &::-webkit-scrollbar {
   //   background: $background-color;
   //   border-left: 2px solid $section-color;
@@ -34,6 +35,10 @@ body {
   background: $background-color;
 }
 
+button {
+  font-family: $principal-font;
+}
+
 a {
   color: $text-color;
   text-decoration: none;
@@ -41,4 +46,9 @@ a {
 
 li {
   list-style: none;
+}
+
+input,
+button {
+  outline: none;
 }

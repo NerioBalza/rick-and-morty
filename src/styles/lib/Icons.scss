@@ -26,14 +26,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-refresh-2:before {
+  content: "\e901";
+}
 .icon-load:before {
   content: "\e97a";
+}
+.icon-refresh:before {
+  content: "\e984";
 }
 .icon-search:before {
   content: "\e986";
 }
-.icon-menu:before {
-  content: "\e9bd";
+.icon-sphere:before {
+  content: "\e9c9";
 }
 .icon-arrow-right:before {
   content: "\ea34";

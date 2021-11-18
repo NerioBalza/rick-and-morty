@@ -7,14 +7,15 @@
 @import "./components/Header.scss";
 @import "./components/Footer.scss";
 
-@import "./components/Searcher.scss";
-@import "./components/Characters.scss";
-@import "./components/CharacterItem.scss";
-@import "./components/PagesButtons.scss";
-@import "./components/NavButton.scss";
-@import "./components/Loading.scss";
 @import "./components/CharacterCard.scss";
+@import "./components/Loader.scss";
+@import "./components/Searcher.scss";
+@import "./components/PageButtons.scss";
+
+@import "./components/NavButton.scss";
 
 // Pages
-@import "./components/Home.scss";
-@import "./components/CharacterDetails.scss";
+@import "./pages/Home.scss";
+@import "./pages/Characters.scss";
+@import "./pages/CharacterDetails.scss";
+@import "./pages/NotFound.scss";

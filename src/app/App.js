@@ -1,23 +1,21 @@
 import React from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
-import Layout from "../components/Layout";
-
 import Home from "../pages/Home";
-// import CharacterDetails from "../pages/CharacterDetails";
+import Characters from "../pages/Characters";
+import NotFound from "../pages/NotFound";
 
 import "../styles/Index.scss";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Layout>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          {/* <Route exact path="/character/:ID" component={CharacterDetails} /> */}
-          <Redirect to="/" component={Home} />
-        </Switch>
-      </Layout>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/characters" component={Characters} />
+        <Route exact path="/404" component={NotFound} />
+        <Redirect to="/404" />
+      </Switch>
     </BrowserRouter>
   );
 };

@@ -1,21 +1,21 @@
 import React from "react";
 
-const Searcher = ({ filter, onChange, onSearch }) => {
+const Searcher = ({ onClick, onChange, filter }) => {
   return (
-    <section className="searcher">
-      <div className="searcher-container">
-        <input
-          onChange={onChange}
-          className="searcher__input"
-          id="searcher"
-          type="text"
-          placeholder="Search for a character"
-          value={filter}
-        />
-        <button onClick={onSearch} className="searcher__button">
-          <i className="icon-search"></i>
-        </button>
-      </div>
+    <section className="Searcher">
+      <input
+        id="Searcher"
+        name="Searcher"
+        type="text"
+        onChange={onChange}
+        value={filter}
+        placeholder="..."
+        autoComplete="off"
+        maxLength="25"
+      />
+      <button onClick={onClick}>
+        <i className="icon-search"></i>
+      </button>
     </section>
   );
 };

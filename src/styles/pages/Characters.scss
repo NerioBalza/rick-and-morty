@@ -1,0 +1,41 @@
+.Characters {
+  padding: 4rem 2rem;
+  display: grid;
+  align-content: flex-start;
+  gap: 4rem;
+
+  &__list {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 620px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 920px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (min-width: 1220px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__error {
+    display: flex;
+    min-height: calc(100vh - 16.5rem);
+    justify-content: center;
+    align-items: center;
+
+    button {
+      display: flex;
+      font-size: 3rem;
+      padding: 0.5rem;
+      border: 2px solid $alert-color;
+      border-radius: 50%;
+      background: none;
+      color: $alert-color;
+    }
+  }
+}

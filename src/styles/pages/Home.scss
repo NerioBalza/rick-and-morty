@@ -6,13 +6,20 @@
   &__hero {
     padding: 6rem 2rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6rem;
 
     h1 {
       font-size: 4rem;
       color: $alert-color;
       max-width: 500px;
       margin: 0 auto;
-      margin-bottom: 4rem;
+    }
+    p {
+      font-size: 2rem;
     }
 
     a {

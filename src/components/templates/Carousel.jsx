@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Carousel = ({ id }) => {
+const Carousel = ({ id, label = "Random characters:" }) => {
   const apiURL = "https://rickandmortyapi.com/api/character/";
   const [loading, setLoading] = useState(true);
   const [carouselList, setCarouselList] = useState([]);
@@ -77,7 +77,7 @@ const Carousel = ({ id }) => {
   return (
     <>
       <section className="carousel">
-        <h2 className="carousel__title">Random Characters</h2>
+        <h2 className="carousel__title">{label}</h2>
         {!loading ? (
           <>
             {!error ? (

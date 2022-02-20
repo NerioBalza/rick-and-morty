@@ -8,10 +8,14 @@ const Home = () => {
   return (
     <Layout className="Home">
       <section className="Home__hero">
-        <h1>Find your favorite Rick & Morty's characters.</h1>
+        <div>
+          <h1>Rick & Mory Characters</h1>
+          <p>Find your favorie characters in one place.</p>
+        </div>
         <Link to="/characters">Start Searching</Link>
       </section>
       <Carousel id="carousel1" />
+      <Carousel id="carousel2" />
     </Layout>
   );
 };

@@ -1,0 +1,101 @@
+@keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.carousel {
+  padding: 6rem 2rem;
+  overflow: hidden;
+  max-width: 1600px;
+  width: 100%;
+
+  &__title {
+    color: $alert-color;
+    font-size: 3rem;
+  }
+
+  &__error {
+    padding: 6rem 0;
+    text-align: center;
+    h2 {
+      font-size: 3rem;
+      color: $danger-color;
+      margin-bottom: 2rem;
+    }
+    button {
+      background: $alert-color;
+      padding: 1rem 3rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $text-color;
+      border-radius: 1rem;
+      border: none;
+    }
+  }
+
+  &__list {
+    padding: 2rem 0rem;
+    display: flex;
+    gap: 2rem;
+    overflow-x: hidden;
+  }
+
+  &-item {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: $section-color;
+    &__image {
+      width: 150px;
+      img {
+        width: 100%;
+        border-radius: 0.5rem;
+        display: block;
+      }
+    }
+    &__info {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h3 {
+        color: $alert-color;
+        font-size: 2.2rem;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      display: flex;
+      max-width: 400px;
+      max-height: 190px;
+      gap: 2rem;
+
+      &__image {
+        height: 150px;
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+      &__info {
+        width: 190px;
+        overflow: hidden;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__loader {
+    padding: 6rem 0;
+    display: flex;
+    justify-content: center;
+
+    p {
+      font-size: 4rem;
+      animation: loader linear 1s infinite;
+    }
+  }
+}

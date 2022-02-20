@@ -1,22 +1,27 @@
 import React from "react";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+// Pages
 import Home from "../pages/Home";
 import Characters from "../pages/Characters";
+import CharacterProfile from "../pages/CharacterProfile";
 import NotFound from "../pages/NotFound";
-
-import "../styles/Index.scss";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/characters" component={Characters} />
-        <Route exact path="/404" component={NotFound} />
-        <Redirect to="/404" />
-      </Switch>
-    </BrowserRouter>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/character/:id" element={<CharacterProfile />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" />} />
+      </Routes>
+    </Router>
   );
 };
 

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const PageButtons = ({ info, onClick, page }) => {
+const PageButtons = ({ info, onClick, page, nextOrPrev }) => {
   const [linksList, setLinksList] = useState([]);
   const { pages } = info;
+  const prevPage = parseInt(page) - 1;
+  const nextPage = parseInt(page) + 1;
 
   useEffect(() => {
     fillButtons();
@@ -13,10 +15,12 @@ const PageButtons = ({ info, onClick, page }) => {
     setLinksList([]);
     const list = [];
 
-    if (pages < 5) {
+    if (pages < 5 && pages > 0) {
       for (let index = 1; index <= pages; index++) {
         list.push({ label: index });
       }
+    } else if (pages === 0) {
+      list.push({ label: 0 });
     } else {
       if (page > 2 && page < pages - 2) {
         for (let index = page - 2; index < page + 3; index++) {
@@ -39,8 +43,8 @@ const PageButtons = ({ info, onClick, page }) => {
     <section className="Page-buttons">
       <div className="Page-buttons__prev">
         {info.prev ? (
-          <button onClick={onClick} value={page - 1}>
-            <i className="icon-arrow-left"></i>
+          <button onClick={nextOrPrev}>
+            <i className="icon-arrow-left" id={prevPage}></i>
           </button>
         ) : (
           <button className="Disable">
@@ -67,8 +71,8 @@ const PageButtons = ({ info, onClick, page }) => {
 
       <div className="Page-buttons__next">
         {info.next ? (
-          <button onClick={onClick} value={parseInt(page) + 1}>
-            <i className="icon-arrow-right"></i>
+          <button onClick={nextOrPrev}>
+            <i className="icon-arrow-right" id={nextPage}></i>
           </button>
         ) : (
           <button className="Disable">

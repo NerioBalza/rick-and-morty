@@ -22,11 +22,28 @@
     }
   }
 
+  &__not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 32.5rem);
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
+
   &__error {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
     min-height: calc(100vh - 16.5rem);
     justify-content: center;
     align-items: center;
+
+    h2 {
+      font-size: 2.2rem;
+      text-align: center;
+    }
 
     button {
       display: flex;

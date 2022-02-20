@@ -1,0 +1,59 @@
+.Character-profile {
+  padding: 4rem 2rem 4rem;
+  display: grid;
+  gap: 4rem;
+  align-content: flex-start;
+
+  &__container {
+    background: $section-color;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+
+    @media screen and (min-width: 475px) {
+      grid-template-columns: 240px 1fr;
+      align-items: flex-start;
+    }
+
+    figure {
+      width: 240px;
+      min-width: 240px;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        display: block;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__info {
+    display: grid;
+    gap: 1rem;
+
+    div {
+      display: grid;
+      gap: 0.25rem;
+    }
+  }
+
+  &__go-back {
+    a {
+      height: 4rem;
+      width: 5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      box-shadow: 0px 0px 5px 2.5px $section-color;
+      color: $section-color;
+      background: $alert-color;
+    }
+  }
+}

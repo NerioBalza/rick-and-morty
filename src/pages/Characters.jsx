@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import Layout from "../components/Layout";
-
 import Loader from "../components/Loader";
 import CharacterCard from "../components/CharacterCard";
 import Searcher from "../components/Searcher";
@@ -40,20 +39,33 @@ const Characters = () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setPageData({
-        ...pageData,
-        isLoading: false,
-        results: data.results,
-        info: data.info,
-        currentPage: page,
-        currentLink: url,
-        error: null,
-      });
+
+      if (data.results) {
+        setPageData({
+          ...pageData,
+          isLoading: false,
+          results: data.results,
+          info: data.info,
+          currentPage: page,
+          currentLink: url,
+          error: null,
+        });
+      } else {
+        setPageData({
+          ...pageData,
+          isLoading: false,
+          results: data.error,
+          info: { pages: 0 },
+          currentPage: 0,
+          currentLink: url,
+        });
+      }
     } catch (error) {
+      console.log(error);
       setPageData({
         ...pageData,
         isLoading: false,
-        error: error,
+        error: error.message,
         currentPage: page,
         currentLink: url,
       });
@@ -85,6 +97,15 @@ const Characters = () => {
     }
   };
 
+  const nextOrPrevPage = (event) => {
+    const page = parseInt(event.target.id);
+    if (filter === "") {
+      fetchCharacterData(`${apiUrl}?page=${page}`, page);
+    } else {
+      fetchCharacterData(`${apiUrl}?page=${page}&name=${filter}`, page);
+    }
+  };
+
   const refreshPage = () => {
     fetchCharacterData(currentLink, currentPage);
   };
@@ -101,25 +122,33 @@ const Characters = () => {
                 filter={filter}
               />
 
-              <section className="Characters__list">
-                {results.map((character) => {
-                  return (
-                    <CharacterCard
-                      key={character.id}
-                      characterInfo={character}
-                    />
-                  );
-                })}
-              </section>
+              {typeof results !== "string" ? (
+                <section className="Characters__list">
+                  {results.map((character) => {
+                    return (
+                      <CharacterCard
+                        key={character.id}
+                        characterInfo={character}
+                      />
+                    );
+                  })}
+                </section>
+              ) : (
+                <section className="Characters__not-found">
+                  <h2>{results}</h2>
+                </section>
+              )}
 
               <PageButtons
                 info={info}
                 onClick={searchPage}
+                nextOrPrev={nextOrPrevPage}
                 page={currentPage}
               />
             </>
           ) : (
             <section className="Characters__error">
+              <h2>{`Error: ${error}`}</h2>
               <button onClick={refreshPage}>
                 <i className="icon-refresh-2"></i>
               </button>

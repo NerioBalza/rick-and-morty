@@ -1,6 +1,7 @@
 // Global
 @import "./lib/Globals.scss";
-@import "./lib/Icons.scss";
+//Icons
+@import "./icons/Icons.scss";
 
 // Components
 @import "./components/Layout.scss";
@@ -11,11 +12,11 @@
 @import "./components/Loader.scss";
 @import "./components/Searcher.scss";
 @import "./components/PageButtons.scss";
-
-@import "./components/NavButton.scss";
+@import "./components/CharactersCarousel.scss";
+@import "./components/templates/Carousel.scss";
 
 // Pages
 @import "./pages/Home.scss";
 @import "./pages/Characters.scss";
-@import "./pages/CharacterDetails.scss";
+@import "./pages/CharacterProfile.scss";
 @import "./pages/NotFound.scss";

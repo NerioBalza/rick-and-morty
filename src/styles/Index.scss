@@ -1,16 +1,18 @@
 // Global
-@import "./lib/Globals.scss";
+@import "./Globals.scss";
 
 // Components
-@import "./components/Layout.scss";
-@import "./components/Header.scss";
-@import "./components/Footer.scss";
+@import "./components/layout/Layout.scss";
+@import "./components/layout/Header.scss";
+@import "./components/layout/Footer.scss";
 
-@import "./components/CharacterCard.scss";
-@import "./components/Loader.scss";
-@import "./components/Searcher.scss";
-@import "./components/PageButtons.scss";
-@import "./components/templates/Carousel.scss";
+@import "./components/basics/Loader.scss";
+@import "./components/basics/Searcher.scss";
+
+@import "./components/container/PageButtons.scss";
+@import "./components/container/Carousel.scss";
+
+@import "./components/templates/CharacterCard.scss";
 
 // Pages
 @import "./pages/Home.scss";

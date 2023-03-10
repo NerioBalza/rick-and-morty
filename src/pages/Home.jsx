@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Layout } from "components";
+import { Layout, Carousel } from "components";
 import logo from "assets/images/logo.png";
 
 const Home = () => {
@@ -21,6 +21,10 @@ const Home = () => {
             <Link to="/characters">Start searching</Link>
           </h2>
         </div>
+      </section>
+
+      <section className="home__carousels">
+        <Carousel id="c1" />
       </section>
     </Layout>
   );

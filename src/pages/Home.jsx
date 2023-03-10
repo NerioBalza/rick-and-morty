@@ -24,7 +24,8 @@ const Home = () => {
       </section>
 
       <section className="home__carousels">
-        <Carousel id="c1" />
+        <Carousel id="carousel1" />
+        <Carousel id="carousel2" />
       </section>
     </Layout>
   );

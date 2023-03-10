@@ -36,4 +36,11 @@
       }
     }
   }
+
+  &__carousels {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 6rem;
+  }
 }

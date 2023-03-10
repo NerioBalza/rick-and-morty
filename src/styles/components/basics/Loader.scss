@@ -7,14 +7,14 @@
   }
 }
 
-.Loader {
+.loader {
   display: flex;
-  min-height: calc(100vh - 16.5rem);
   justify-content: center;
   align-items: center;
 
-  &__icon {
-    animation: icon-spinner infinite 2s linear;
-    font-size: 4rem;
+  .spinner {
+    font-size: 3rem;
+    animation: icon-spinner infinite 1s linear;
+    color: $middle-green;
   }
 }

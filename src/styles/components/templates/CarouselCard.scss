@@ -1,0 +1,51 @@
+.carousel-card {
+  width: 100%;
+  min-width: 200px;
+
+  overflow: hidden;
+  border-radius: 1.2rem;
+  background: $foreground;
+
+  &__image {
+    width: 100%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__data {
+    padding: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    h3 {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    min-width: 400px;
+
+    &__image {
+      width: 200px;
+      min-width: 200px;
+      height: 200px;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+
+    &__data {
+      padding: 2rem;
+      padding-top: 1.2rem;
+    }
+  }
+}

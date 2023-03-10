@@ -14,7 +14,7 @@
   width: 100%;
 
   &__title {
-    color: $alert-color;
+    // color: $alert-color;
     font-size: 3rem;
   }
 
@@ -23,15 +23,15 @@
     text-align: center;
     h2 {
       font-size: 3rem;
-      color: $danger-color;
+      // color: $danger-color;
       margin-bottom: 2rem;
     }
     button {
-      background: $alert-color;
+      // background: $alert-color;
       padding: 1rem 3rem;
       font-size: 1.8rem;
       font-weight: bold;
-      color: $text-color;
+      color: $texts;
       border-radius: 1rem;
       border: none;
     }
@@ -47,7 +47,7 @@
   &-item {
     padding: 2rem;
     border-radius: 1rem;
-    background: $section-color;
+    background: $foreground;
     &__image {
       width: 150px;
       img {
@@ -63,7 +63,7 @@
       gap: 1rem;
 
       h3 {
-        color: $alert-color;
+        // color: $alert-color;
         font-size: 2.2rem;
       }
     }

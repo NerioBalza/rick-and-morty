@@ -1,6 +1,5 @@
 .Character-card {
-  background-color: $section-color;
-  color: $text-color;
+  background-color: $foreground;
   border-radius: 0.5rem;
   overflow: hidden;
   display: flex;
@@ -8,7 +7,6 @@
   // min-width: 280px;
   max-width: 400px;
   height: 140px;
-  box-shadow: 0px 0px 5px $section-color;
 
   &__picture {
     height: inherit;
@@ -41,11 +39,11 @@
   margin: 0 0 1px 5px;
 }
 .Dead {
-  background-color: #f07979;
+  background-color: red;
 }
 .Alive {
-  background-color: $alert-color;
+  background-color: green;
 }
 .unknown {
-  background-color: gray;
+  background-color: grey;
 }

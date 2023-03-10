@@ -3,12 +3,11 @@
   width: 100%;
   max-width: 400px;
   border-radius: 0.5rem;
-  box-shadow: 0px 0px 5px 2.5px $section-color;
   margin: 0 auto;
 
   input {
     width: 100%;
-    background-color: $text-color;
+    background-color: $texts;
     padding: 1.2rem;
     font-size: 1.4rem;
     border: none;
@@ -17,8 +16,8 @@
 
   button {
     position: absolute;
-    background: $alert-color;
-    color: $section-color;
+    // background: $alert-color;
+    // color: $section-color;
     border: none;
     right: 0;
     width: 4rem;

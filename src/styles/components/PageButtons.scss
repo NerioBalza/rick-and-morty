@@ -14,8 +14,7 @@
     align-items: center;
     font-size: 1.6rem;
     font-weight: bold;
-    background: $alert-color;
-    box-shadow: 0px 0px 5px 2.5px $section-color;
+    // background: $alert-color;
 
     i {
       height: 4rem;
@@ -26,11 +25,11 @@
     }
 
     &:active {
-      background: rgba($alert-color, 0.5);
+      // background: rgba($alert-color, 0.5);
     }
 
     &.Disable {
-      background: rgba($alert-color, 0.5);
+      // background: rgba($alert-color, 0.5);
     }
   }
 

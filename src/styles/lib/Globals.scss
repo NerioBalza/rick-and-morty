@@ -1,13 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-$principal-font: "Roboto", sans-serif;
-$title-font: "Ubuntu", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+// Fotn
+$font: "Gloria Hallelujah", sans-serif;
 
-$background-color: #242526;
-$section-color: #18191a;
-$alert-color: #8bf079;
-$danger-color: #9b111e;
-$text-color: #ffffff;
+// Colors
+$black: #0d0d0d;
+$white: #f0f2eb;
+$light-green: #a7cb54;
+$middle-green: #5cad4a;
+$dark-green: #208d45;
+
+$background: $black;
+$foreground: #19191a;
+$texts: $white;
 
 * {
   margin: 0;
@@ -19,32 +23,28 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   min-width: 320px;
+
   &::-webkit-scrollbar {
-    background: $background-color;
-    width: 10px;
+    background: $background;
+    width: 14px;
   }
   &::-webkit-scrollbar-thumb {
-    background: $alert-color;
-    border-radius: 3px;
+    background: $middle-green;
+    border-radius: 7px;
+    border: 3px solid $background;
   }
 }
 
 body {
-  font-family: $principal-font;
-  color: $text-color;
-  background: $background-color;
+  font-family: $font;
+  color: $texts;
+  background: $background;
 }
 
-button {
-  font-family: $principal-font;
-}
-
-a {
-  color: $text-color;
-  text-decoration: none;
-}
-
+a,
 li {
+  color: inherit;
+  text-decoration: none;
   list-style: none;
 }
 
@@ -54,27 +54,24 @@ button {
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-  font-family: $title-font;
+h4 {
+  color: $middle-green;
 }
 
-h1 {
-  font-size: 2.6rem;
-}
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
+
 h3 {
   font-size: 2rem;
 }
+
 h4 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }

@@ -5,7 +5,7 @@
   align-content: flex-start;
 
   &__container {
-    background: $section-color;
+    // background: $section-color;
     margin: 0 auto;
     width: 100%;
     max-width: 500px;
@@ -51,9 +51,9 @@
       justify-content: center;
       align-items: center;
       font-size: 2rem;
-      box-shadow: 0px 0px 5px 2.5px $section-color;
-      color: $section-color;
-      background: $alert-color;
+      // box-shadow: 0px 0px 5px 2.5px $section-color;
+      // color: $section-color;
+      // background: $alert-color;
     }
   }
 }

@@ -3,19 +3,18 @@ import { baseApiUrl } from "utils/contans";
 
 const useCharacters = () => {
   const [data, setData] = useState({
-    info: {},
+    info: { pages: 0 },
     results: [],
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filter, setFilter] = useState("");
   const [page, setPage] = useState(1);
-  const [currentUrl, setCurrentUrl] = useState(baseApiUrl);
 
   const fetchCharacters = async (api) => {
     window.scrollTo(0, 0);
     setError(null);
-    setData({ info: {}, results: [] });
+    setData({ info: { pages: 0 }, results: [] });
     setLoading(true);
     await fetch(api)
       .then(async (res) => {
@@ -30,6 +29,7 @@ const useCharacters = () => {
   };
 
   const searchByFilter = () => {
+    setPage(1);
     if (filter) {
       fetchCharacters(`${baseApiUrl}?name=${filter}`);
     } else {
@@ -37,7 +37,10 @@ const useCharacters = () => {
     }
   };
 
-  const searchPage = () => {};
+  const searchPage = (api, page) => {
+    setPage(page);
+    fetchCharacters(api);
+  };
 
   useEffect(() => {
     fetchCharacters(baseApiUrl);
@@ -48,8 +51,10 @@ const useCharacters = () => {
     loading,
     error,
     filter,
+    page,
     setFilter,
     searchByFilter,
+    searchPage,
   };
 };
 

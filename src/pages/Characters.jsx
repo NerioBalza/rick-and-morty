@@ -9,8 +9,16 @@ import {
 import useCharacters from "hooks/useCharacters";
 
 const Characters = (props) => {
-  const { data, loading, error, filter, setFilter, searchByFilter } =
-    useCharacters();
+  const {
+    data,
+    loading,
+    error,
+    filter,
+    page,
+    setFilter,
+    searchByFilter,
+    searchPage,
+  } = useCharacters();
 
   return (
     <Layout className="characters" showFooter={false}>
@@ -37,7 +45,7 @@ const Characters = (props) => {
       )}
 
       <div>
-        <PageButtons data={data.info} />
+        <PageButtons data={data.info} page={page} searchPage={searchPage} />
       </div>
     </Layout>
   );

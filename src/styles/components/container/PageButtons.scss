@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     border: none;
-    width: 3.2rem;
+    min-width: 3.2rem;
     border-radius: 0.4rem;
     height: 4.8rem;
     background: $middle-green;
@@ -19,6 +19,12 @@
   .pages {
     display: flex;
     gap: 0.8rem;
+
+    &__last {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
   }
 
   .disabled {

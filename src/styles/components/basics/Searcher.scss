@@ -1,33 +1,47 @@
-.Searcher {
+.searcher {
   position: relative;
   width: 100%;
   max-width: 400px;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
+  background: $texts;
+  height: 4rem;
   margin: 0 auto;
+  display: flex;
+  overflow: hidden;
 
   input {
     width: 100%;
-    background-color: $texts;
+    background: none;
+    border: none;
     padding: 1.2rem;
     font-size: 1.4rem;
-    border: none;
-    border-radius: 0.5rem;
+    font-family: $font;
   }
 
   button {
-    position: absolute;
-    // background: $alert-color;
-    // color: $section-color;
-    border: none;
-    right: 0;
-    width: 4rem;
+    min-width: 4rem;
     height: 4rem;
-    border-radius: 0.5rem;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2rem;
-    i {
-      display: block;
+    background: $middle-green;
+    border: none;
+    color: $texts;
+    transition: background ease 500ms;
+    cursor: pointer;
+
+    &:active {
+      background: $dark-green;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    height: 5rem;
+
+    button {
+      min-width: 5rem;
+      height: 5rem;
     }
   }
 }

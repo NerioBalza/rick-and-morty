@@ -1,22 +1,29 @@
 import React from "react";
+import { FaSearch } from "react-icons/fa";
 
-const Searcher = ({ onClick, onChange, filter }) => {
+const Searcher = ({ onClick, onChange, value }) => {
+  const handleChange = (e) => {
+    const value = e.target.value.toLowerCase();
+    onChange(value);
+  };
+
   return (
-    <section className="Searcher">
+    <div className="searcher">
       <input
-        id="Searcher"
-        name="Searcher"
+        id="searcher"
+        name="searcher"
         type="text"
-        onChange={onChange}
-        value={filter}
-        placeholder="..."
+        onChange={handleChange}
+        value={value}
+        placeholder="Rick Sanchez..."
         autoComplete="off"
         maxLength="25"
       />
+
       <button onClick={onClick}>
-        <i className="icon-search"></i>
+        <FaSearch />
       </button>
-    </section>
+    </div>
   );
 };
 

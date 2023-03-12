@@ -1,87 +1,116 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-const PageButtons = ({ info, onClick, page, nextOrPrev }) => {
-  const [linksList, setLinksList] = useState([]);
-  const { pages } = info;
-  const prevPage = parseInt(page) - 1;
-  const nextPage = parseInt(page) + 1;
+const PageButtons = (props) => {
+  const { data, searchPage } = props;
 
-  useEffect(() => {
-    fillButtons();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  console.log(data.pages);
+  console.log(data.next);
+  console.log(data.prev);
 
-  const fillButtons = () => {
-    setLinksList([]);
-    const list = [];
-
-    if (pages < 5 && pages > 0) {
-      for (let index = 1; index <= pages; index++) {
-        list.push({ label: index });
-      }
-    } else if (pages === 0) {
-      list.push({ label: 0 });
-    } else {
-      if (page > 2 && page < pages - 2) {
-        for (let index = page - 2; index < page + 3; index++) {
-          list.push({ label: index });
-        }
-      } else if (page <= 2) {
-        for (let index = 1; index <= 5; index++) {
-          list.push({ label: index });
-        }
-      } else {
-        for (let index = pages - 4; index <= pages; index++) {
-          list.push({ label: index });
-        }
-      }
-    }
-    setLinksList(list);
-  };
+  const handlePrev = () => {};
+  const handleNext = () => {};
+  const handleSearchPage = () => {};
 
   return (
-    <section className="Page-buttons">
-      <div className="Page-buttons__prev">
-        {info.prev ? (
-          <button onClick={nextOrPrev}>
-            <i className="icon-arrow-left" id={prevPage}></i>
-          </button>
-        ) : (
-          <button className="Disable">
-            <i className="icon-arrow-left"></i>
-          </button>
-        )}
-      </div>
+    <div className="page-buttons">
+      <button className={!data.prev ? "disabled" : ""} onClick={handlePrev}>
+        <FaAngleLeft />
+      </button>
 
-      <div className="Page-buttons__list">
-        {linksList.map((buttonInfo) => {
-          const disable = buttonInfo.label === page ? "Disable" : "";
-          return (
-            <button
-              onClick={!disable ? onClick : null}
-              className={disable}
-              key={buttonInfo.label}
-              value={buttonInfo.label}
-            >
-              {buttonInfo.label}
-            </button>
-          );
-        })}
-      </div>
+      <div className="pages"></div>
 
-      <div className="Page-buttons__next">
-        {info.next ? (
-          <button onClick={nextOrPrev}>
-            <i className="icon-arrow-right" id={nextPage}></i>
-          </button>
-        ) : (
-          <button className="Disable">
-            <i className="icon-arrow-right"></i>
-          </button>
-        )}
-      </div>
-    </section>
+      <button className={!data.next ? "disabled" : ""} onClick={handleNext}>
+        <FaAngleRight />
+      </button>
+    </div>
   );
 };
 
 export default PageButtons;
+
+// const PageButtons = ({ info, onClick, page, nextOrPrev }) => {
+//   const [linksList, setLinksList] = useState([]);
+//   const { pages } = info;
+//   const prevPage = parseInt(page) - 1;
+//   const nextPage = parseInt(page) + 1;
+
+//   useEffect(() => {
+//     fillButtons();
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, []);
+
+//   const fillButtons = () => {
+//     setLinksList([]);
+//     const list = [];
+
+//     if (pages < 5 && pages > 0) {
+//       for (let index = 1; index <= pages; index++) {
+//         list.push({ label: index });
+//       }
+//     } else if (pages === 0) {
+//       list.push({ label: 0 });
+//     } else {
+//       if (page > 2 && page < pages - 2) {
+//         for (let index = page - 2; index < page + 3; index++) {
+//           list.push({ label: index });
+//         }
+//       } else if (page <= 2) {
+//         for (let index = 1; index <= 5; index++) {
+//           list.push({ label: index });
+//         }
+//       } else {
+//         for (let index = pages - 4; index <= pages; index++) {
+//           list.push({ label: index });
+//         }
+//       }
+//     }
+//     setLinksList(list);
+//   };
+
+//   return (
+//     <section className="Page-buttons">
+//       <div className="Page-buttons__prev">
+//         {info.prev ? (
+//           <button onClick={nextOrPrev}>
+//             <i className="icon-arrow-left" id={prevPage}></i>
+//           </button>
+//         ) : (
+//           <button className="Disable">
+//             <i className="icon-arrow-left"></i>
+//           </button>
+//         )}
+//       </div>
+
+//       <div className="Page-buttons__list">
+//         {linksList.map((buttonInfo) => {
+//           const disable = buttonInfo.label === page ? "Disable" : "";
+//           return (
+//             <button
+//               onClick={!disable ? onClick : null}
+//               className={disable}
+//               key={buttonInfo.label}
+//               value={buttonInfo.label}
+//             >
+//               {buttonInfo.label}
+//             </button>
+//           );
+//         })}
+//       </div>
+
+//       <div className="Page-buttons__next">
+//         {info.next ? (
+//           <button onClick={nextOrPrev}>
+//             <i className="icon-arrow-right" id={nextPage}></i>
+//           </button>
+//         ) : (
+//           <button className="Disable">
+//             <i className="icon-arrow-right"></i>
+//           </button>
+//         )}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default PageButtons;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { baseApiUrl } from "utils/contans";
 
 const useCarousel = (id) => {
-  const baseApiUrl = "https://rickandmortyapi.com/api/character/";
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);

@@ -1,21 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CharacterCard = ({ characterInfo }) => {
-  const { id, name, status, image, species } = characterInfo;
+const CharacterCard = (props) => {
+  const { data } = props;
+  const { id, name, status, image, species } = data;
 
   return (
-    <Link to={`/character/${id}`} className="Character-card">
-      <figure className="Character-card__picture">
-        <img src={image} alt={name + " Picture"} />
+    <Link to={`/character/${id}`} className="character-card">
+      <figure className="character-card__image">
+        <img src={image} alt={name} />
       </figure>
-      <div className="Character-card__info">
-        <h2>{name}</h2>
-        <p>Species: {species}</p>
-        <p>
-          Status: {status}
-          <i className={status + " status"}></i>
-        </p>
+
+      <div className="character-card__data">
+        <h3>{name}</h3>
+        <div>
+          <p>Species: {species}</p>
+          <p>Status: {status}</p>
+        </div>
       </div>
     </Link>
   );

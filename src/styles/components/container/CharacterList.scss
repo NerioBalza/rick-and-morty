@@ -1,0 +1,29 @@
+.character-list {
+  width: 100%;
+  padding: 4rem 0;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  place-content: center;
+
+  @media screen and (min-width: 760px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 860px) {
+    grid-template-columns: repeat(2, 400px);
+  }
+
+  @media screen and (min-width: 1130px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: repeat(3, 400px);
+  }
+
+  @media screen and (min-width: 1500px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (min-width: 1700px) {
+    grid-template-columns: repeat(4, 400px);
+  }
+}

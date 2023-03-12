@@ -1,49 +1,44 @@
-.Character-card {
-  background-color: $foreground;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  display: flex;
+.character-card {
   width: 100%;
-  // min-width: 280px;
   max-width: 400px;
-  height: 140px;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  background: $foreground;
+  display: flex;
+  transition: transform ease-in-out 300ms;
 
-  &__picture {
-    height: inherit;
+  &__image {
+    width: 50%;
     img {
-      height: 100%;
+      width: 100%;
+      display: block;
     }
   }
 
-  &__info {
-    padding: 2rem 1rem;
+  &__data {
+    width: 50%;
+    padding: 2rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
 
-    h2 {
-      font-size: 1.6rem;
+    h3 {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     p {
-      font-size: 1.4rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
-}
 
-.status {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  margin: 0 0 1px 5px;
-}
-.Dead {
-  background-color: red;
-}
-.Alive {
-  background-color: green;
-}
-.unknown {
-  background-color: grey;
+  @media screen and (min-width: 768px) {
+    &:hover {
+      transform: translate(8px, -8px);
+    }
+  }
 }

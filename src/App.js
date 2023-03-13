@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Characters, NotFound } from "pages";
+import { Home, Characters, CharacterProfile, NotFound } from "pages";
 import "styles/Index.scss";
 
 const App = () => {
@@ -9,9 +9,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/characters" element={<Characters />} />
-        {/* 
+
         <Route path="/character/:id" element={<CharacterProfile />} />
-      */}
+
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Router>

@@ -1,59 +1,44 @@
-.Character-profile {
-  padding: 4rem 2rem 4rem;
-  display: grid;
-  gap: 4rem;
-  align-content: flex-start;
-
-  &__container {
-    // background: $section-color;
-    margin: 0 auto;
-    width: 100%;
+.character {
+  &-profile {
+    padding: 4rem 2rem 2rem;
     max-width: 500px;
-    border-radius: 1rem;
-    overflow: hidden;
-    padding: 2rem;
-    display: grid;
-    gap: 2rem;
+    margin: 0 auto;
 
-    @media screen and (min-width: 475px) {
-      grid-template-columns: 240px 1fr;
-      align-items: flex-start;
+    .character__display {
+      figure {
+        display: flex;
+        justify-content: center;
+        img {
+          display: block;
+          max-width: 224px;
+          border-radius: 50%;
+          border: 1.2rem solid $foreground;
+        }
+      }
+      h1 {
+        margin-top: 1.2rem;
+        font-size: 4rem;
+        text-align: center;
+      }
     }
 
-    figure {
-      width: 240px;
-      min-width: 240px;
-      margin: 0 auto;
-      img {
-        width: 100%;
-        display: block;
-        border-radius: 50%;
+    .character__data {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1.2rem;
+      p {
+        font-size: 1.6rem;
+        display: flex;
+        justify-content: space-between;
       }
     }
   }
 
-  &__info {
-    display: grid;
-    gap: 1rem;
-
-    div {
-      display: grid;
-      gap: 0.25rem;
-    }
-  }
-
-  &__go-back {
-    a {
-      height: 4rem;
-      width: 5rem;
-      border-radius: 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      // box-shadow: 0px 0px 5px 2.5px $section-color;
-      // color: $section-color;
-      // background: $alert-color;
-    }
+  .loader-container {
+    min-height: calc(100vh - 8rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8rem;
   }
 }

@@ -9,7 +9,7 @@ const CharacterProfile = () => {
   const { data, loading, error } = useChatacter(id);
 
   return (
-    <Layout className="character" showFooter={false}>
+    <Layout className="character" showFooter={false} back={true}>
       {!(loading || error) && (
         <div className="character-profile">
           <div className="character__display">

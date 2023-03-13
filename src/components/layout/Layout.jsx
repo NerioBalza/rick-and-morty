@@ -3,11 +3,11 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const Layout = (props) => {
-  const { children, className, showFooter } = props;
+  const { children, className, showFooter, back } = props;
 
   return (
     <>
-      <Header />
+      <Header back={back} />
 
       <main className={`layout ${className}`}>
         <>{children}</>

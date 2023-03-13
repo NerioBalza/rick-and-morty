@@ -4,12 +4,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  justify-content: center;
-  // background: $foreground;
+
+  &__back {
+    height: 4rem;
+    width: 4rem;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $middle-green;
+      border: none;
+      height: 4rem;
+      width: 4rem;
+      border-radius: 2rem;
+      font-size: 2rem;
+
+      svg {
+        transform: translate(-1px, 0px);
+      }
+    }
+  }
 
   &__logo {
     width: 6.8rem;
     height: 6.8rem;
     display: block;
+  }
+
+  &__blank {
+    height: 4rem;
+    width: 4rem;
   }
 }
